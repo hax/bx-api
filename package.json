@@ -4,7 +4,9 @@
   "description": "BaiXing API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "jsdoc": "jsdoc -d doc/api . util",
+	"jsdoc2": "jsdoc . util -d console -t node_modules/jsdoc/templates/haruki",
+	"clean": "rm -rf doc/api"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/hax/bx-api/issues"
   },
-  "homepage": "https://github.com/hax/bx-api"
+  "homepage": "https://github.com/hax/bx-api",
+  "dependencies": {
+    "debug": "^0.8.1",
+    "es6-promise": "^1.0.0",
+    "xmlhttprequest": "^1.6.0"
+  },
+  "devDependencies": {
+    "jsdoc": "jsdoc3/jsdoc"
+  }
 }
