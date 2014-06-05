@@ -1,12 +1,12 @@
 {
   "name": "bx-api",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "BaiXing API",
   "main": "index.js",
   "scripts": {
     "jsdoc": "jsdoc -d doc/api . util",
-	"jsdoc2": "jsdoc . util -d console -t node_modules/jsdoc/templates/haruki",
-	"clean": "rm -rf doc/api"
+    "jsdoc2": "jsdoc . util -d console -t node_modules/jsdoc/templates/haruki",
+    "clean": "rm -rf doc/api"
   },
   "repository": {
     "type": "git",
