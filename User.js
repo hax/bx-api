@@ -16,11 +16,19 @@ function User(bx) {
 	 */
 	return {
 		/**
+		 * @typedef User
+		 * @property {opaque} id
+		 * @property {string} name
+		 * @property {timestamp} createdTime
+		 * @property {string} mobile
+		 */
+
+		/**
 		 * @typedef LoginParameters
 		 * @property {module:bx-api/User~LoginType} type
 		 * @property {string} identity
 		 * @property {string} password
-		 * @property {uint16} [expire = 366]
+		 * @property {uint16} [expire = 60] //TODO: 60 or 366?
 		 */
 
 		/**
@@ -32,7 +40,7 @@ function User(bx) {
 		 *
 		 * @typedef {function} login
 		 * @param {module:bx-api/User~LoginParameters} parameters
-		 * @returns {Promise.<{user: object, token: opaque}, module:bx-api/API~Error>}
+		 * @returns {Promise.<{user: module:bx-api/User~User, token: opaque}, module:bx-api/API~Error>}
 		 */
 		login: function (parameters) {
 			return bx('User.login', parameters)
