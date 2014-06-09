@@ -84,7 +84,7 @@ function API(appId, appSecret, baseURL) {
 			debug(method + ' ' + baseURL + path, body)
 		}).catch(function (err) {
 			debug('failed', err)
-			throw e
+			throw err
 		})
 	}
 
