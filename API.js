@@ -6,7 +6,7 @@ var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest
 
 var md5 = require('./util/md5')
 
-var debug = require('debug')('bx')
+var debug = require('debug')('bx-api')
 
 /**
  * 创建一个百姓网 API 接口
