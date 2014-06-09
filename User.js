@@ -41,3 +41,9 @@ function User(bx) {
 }
 
 module.exports = User
+module.exports.isValidMobile = function isMobile(value) {
+	return /^1\d{10}$/.test(value)
+}
+module.exports.isValidUserId = function isUserId(value) {
+	return /^u\d{5,}/.test(value)
+}
