@@ -58,8 +58,20 @@ function API(appId, appSecret, baseURL) {
 			xhr.setRequestHeader('Accept', 'application/json')
 			if (body) xhr.setRequestHeader('Content-Type', 'application/json')
 			xhr.setRequestHeader('BAPI-APP-KEY', appId)
-			xhr.setRequestHeader('BAPI-HASH', md5(path + body + appSecret))
+			if (options.udid) xhr.setRequestHeader('UDID', options.udid)
 			if (options.token) xhr.setRequestHeader('BAPI-USER-TOKEN', options.token)
+			var nonce = Math.random().toString(16).slice(2)
+			if (nonce.length < 4) nonce += '000'
+			xhr.setRequestHeader('BAPI-NONCE', nonce)
+			//xhr.setRequestHeader('BAPI-HASH', md5(path + body + appSecret))
+			xhr.setRequestHeader('BAPI-HASH', md5(
+				(options.udid || '') +
+				(options.token || '') +
+				path +
+				body +
+				appSecret +
+				nonce
+			))
 			xhr.onload = function () {
 				var type = this.getResponseHeader('Content-Type'), res
 				if (/^application\/(.+\+)?json$/i.test(type)) {
