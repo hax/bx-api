@@ -1,6 +1,6 @@
 {
   "name": "bx-api",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "BaiXing API",
   "main": "index.js",
   "scripts": {
